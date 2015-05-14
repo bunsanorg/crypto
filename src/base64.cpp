@@ -4,10 +4,10 @@
 
 namespace bunsan{namespace crypto{namespace base64
 {
-    std::string encode(const std::string &data)
+    std::string encode(const unsigned char *data, std::size_t size)
     {
         std::string result;
-        CryptoPP::StringSource ss(data, true,
+        CryptoPP::StringSource ss(data, size, true,
             new CryptoPP::Base64Encoder(
                 new CryptoPP::StringSink(result),
                 /* line break */ false
@@ -16,10 +16,10 @@ namespace bunsan{namespace crypto{namespace base64
         return result;
     }
 
-    std::string decode(const std::string &data)
+    std::string decode(const unsigned char *data, std::size_t size)
     {
         std::string result;
-        CryptoPP::StringSource ss(data, true,
+        CryptoPP::StringSource ss(data, size, true,
             new CryptoPP::Base64Decoder(
                 new CryptoPP::StringSink(result)
             )

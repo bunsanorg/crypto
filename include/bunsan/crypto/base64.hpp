@@ -10,14 +10,14 @@ namespace crypto {
 namespace base64 {
 
 std::string encode(const byte *data, std::size_t size);
-std::string decode(const byte *data, std::size_t size);
+std::string decode(const char *data, std::size_t size);
 
 inline std::string encode(const char *data, std::size_t size) {
   return encode(reinterpret_cast<const byte *>(data), size);
 }
 
-inline std::string decode(const char *data, std::size_t size) {
-  return decode(reinterpret_cast<const byte *>(data), size);
+inline std::string decode(const byte *data, std::size_t size) {
+  return decode(reinterpret_cast<const char *>(data), size);
 }
 
 inline std::string encode(const std::string &data) {

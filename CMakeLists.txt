@@ -14,7 +14,7 @@ bunsan_add_library(${PROJECT_NAME}
     src/base64.cpp
 )
 bunsan_use_bunsan_package(${PROJECT_NAME} bunsan_common bunsan_common)
-target_link_libraries(${PROJECT_NAME} PRIVATE cryptopp)
+bunsan_use_package(${PROJECT_NAME} Botan)
 
 bunsan_install_headers()
 bunsan_install_targets(${PROJECT_NAME})

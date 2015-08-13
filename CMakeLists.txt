@@ -12,6 +12,7 @@ endif()
 
 bunsan_add_library(${PROJECT_NAME}
     src/base64.cpp
+    src/checksum.cpp
 )
 bunsan_use_bunsan_package(${PROJECT_NAME} bunsan_common bunsan_common)
 bunsan_use_package(${PROJECT_NAME} Botan)

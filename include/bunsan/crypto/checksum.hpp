@@ -13,7 +13,6 @@ namespace checksum {
 std::string crc24(const boost::filesystem::path &path);
 std::string crc32(const boost::filesystem::path &path);
 
-std::string md2(const boost::filesystem::path &path);
 std::string md4(const boost::filesystem::path &path);
 std::string md5(const boost::filesystem::path &path);
 

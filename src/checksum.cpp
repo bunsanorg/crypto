@@ -2,7 +2,6 @@
 
 #include <botan/crc24.h>
 #include <botan/crc32.h>
-#include <botan/md2.h>
 #include <botan/md4.h>
 #include <botan/md5.h>
 #include <botan/sha160.h>
@@ -46,10 +45,6 @@ std::string crc24(const boost::filesystem::path &path) {
 
 std::string crc32(const boost::filesystem::path &path) {
   return checksum_<Botan::CRC32>(path);
-}
-
-std::string md2(const boost::filesystem::path &path) {
-  return checksum_<Botan::MD2>(path);
 }
 
 std::string md4(const boost::filesystem::path &path) {
